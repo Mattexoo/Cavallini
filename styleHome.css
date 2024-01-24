@@ -1,0 +1,27 @@
+#contTitoloHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 150px;
+    margin: 25px;
+    border: solid 2px black;
+    border-radius: 30px;
+    background-color: #edf6f9;
+}
+
+#mainContHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+#avvGioco{
+    height: 50px;
+    width: 150px;
+    background-color: #edf6f9;
+    border-radius: 30px;
+}

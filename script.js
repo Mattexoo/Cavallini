@@ -14,3 +14,6 @@ function cambiaCartaHome(){
             break;
     }
 }
+window.onload(function(){
+
+});

@@ -16,12 +16,11 @@
         </button>
     </main>
     <?php
-
         //qua ricevi il seme punta
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $seme = $_POST['seme']; // $seme = 'h', 'd', 'c', 's'
-            
+
         }
 
     ?>

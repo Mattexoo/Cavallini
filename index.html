@@ -17,10 +17,10 @@
         <form action="gioco.php" method="post" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <label for="sceltaSeme">Quale pensi sia il seme vincente?</label>
             <select id="sceltaSeme" name="seme" onchange="cambiaCartaHome()">
-                <option value="h">Cuori</option>
-                <option value="d">Quadri</option>
-                <option value="c">Fiori</option>
-                <option value="s">Picche</option>
+                <option value="h" style="color: red;">♥️</option>
+                <option value="d" style="color: red;">♦️</option>
+                <option value="c" style="color: black;">♣️</option>
+                <option value="s" style="color: black;">♠️</option> 
             </select>
             <img src="./ImmaginiCarte/bg_h1.gif" alt="IMMAGINE NON DISPONIBILE" id="imgSemeHome">
             <input id="avvGioco" type="submit" value="INIZIA LA CORSA">

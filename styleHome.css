@@ -43,7 +43,7 @@
 }
 
 @keyframes flicker {
-    0%, 18%, 22%, 25%, 52%, 58%, 100% {
+    0%, 18%, 22%, 25%, 52%, 65%, 100% {
       opacity: 1;
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff, 0 0 100px #ff00ff, 0 0 150px #ff00ff;
     }

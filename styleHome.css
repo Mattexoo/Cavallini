@@ -20,8 +20,16 @@
 }
 
 #avvGioco{
-    height: 50px;
-    width: 150px;
+    height: 75px;
+    width: 250px;
     background-color: #edf6f9;
     border-radius: 30px;
+    margin-top: 125px;
+}
+
+#imgSemeHome{
+    margin-top: 25px;
+    border: solid 3px black;
+    border-radius: 15px;
+    padding: 5px;
 }

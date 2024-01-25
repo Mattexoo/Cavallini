@@ -6,15 +6,18 @@
     <title>Home</title>
     <link rel="stylesheet" href="./styleHome.css">
     <script src="./script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div id="mainContHome">
         <div id="contTitoloHome">
-            <h2 style="color: #22333b;">GIOCO DEI CAVALLI</h2>
+            <h2>GIOCO DEI CAVALLI</h2>
         </div>
         
-        <form action="gioco.php" method="post" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <form action="gioco.php" method="post" id="form">
             <label for="sceltaSeme">Quale pensi sia il seme vincente?</label>
             <select id="sceltaSeme" name="seme" onchange="cambiaCartaHome()">
                 <option value="h" style="color: red;">♥️</option>

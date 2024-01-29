@@ -39,7 +39,7 @@ $betSuit = $_POST['seme'];
             width: 5%;
             height: 450px;
             padding: 10px;
-            margin-left:20%;
+            margin-left: 20%;
         }
         .field img {
             display: block;
@@ -57,7 +57,7 @@ $betSuit = $_POST['seme'];
             flex-direction: row;
             width : 90vh;
             margin-left: 25%;
-            margin-top : 220px;
+            margin-top : 205px;
             padding: 25px;
         }
 
@@ -83,6 +83,7 @@ $betSuit = $_POST['seme'];
             border-radius: 7px;
             padding : 5px;
             background-color: white;
+            height: 125px;
         }
 
         #pesca-carta {
@@ -227,7 +228,7 @@ $betSuit = $_POST['seme'];
 
                         setTimeout(() => {
                             suit = res[3];
-                            $(`[data-suit="${suit}"]`).css('top', "-=" + $('.field img').height())
+                            $(`[data-suit="${suit}"]`).css('top', `-=${$('.field img').height() + 10}px`)
                             points[suit] += 1
                             checkGame(suit)
                         }, 200)
@@ -250,7 +251,7 @@ $betSuit = $_POST['seme'];
                         points[suit] += 1
 
                         setTimeout(() => {
-                            $(`[data-suit="${suit}"]`).css('top', "-=" + $('.field img').height())
+                            $(`[data-suit="${suit}"]`).css('top', `-=${$('.field img').height() + 10}px`)
                             checkGame(suit)
                         }, 200)
                     },

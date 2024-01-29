@@ -78,7 +78,15 @@ $betSuit = "c";
             </div>
         </div>
     </main>
+    <?php
+        //qua ricevi il seme punta
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+            $seme = $_POST['seme']; // $seme = 'h', 'd', 'c', 's'
+
+        }
+
+    ?>
     <script>
         const START_POINTS = {
             c: 0,

@@ -170,7 +170,6 @@ $betSuit = $_POST['seme'];
             }
 
             function restartGame() {
-                location.reload();
                 $(`[data-suit]`).css('top', '0')
                 $(".deck .card").attr('src', '')
                 $('.field img').attr('src', './ImmaginiCarte/dorso.JPG')

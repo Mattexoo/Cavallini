@@ -1,6 +1,5 @@
 <?php
-// $betSuit = $_POST['seme'];
-$betSuit = "c";
+$betSuit = $_POST['seme'];
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +9,7 @@ $betSuit = "c";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inizia la corsa</title>
-    <link rel="stylesheet" href="gioco.css">
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <style>
@@ -57,36 +56,28 @@ $betSuit = "c";
 <body>
     <main class="gioco">
         <div class="field">
-            <img src="./Immagini Carte/dorso.JPG" alt="">
-            <img src="./Immagini Carte/dorso.JPG" alt="">
-            <img src="./Immagini Carte/dorso.JPG" alt="">
-            <img src="./Immagini Carte/dorso.JPG" alt="">
-            <img src="./Immagini Carte/dorso.JPG" alt="">
+            <img src="./ImmaginiCarte/dorso.JPG" alt="">
+            <img src="./ImmaginiCarte/dorso.JPG" alt="">
+            <img src="./ImmaginiCarte/dorso.JPG" alt="">
+            <img src="./ImmaginiCarte/dorso.JPG" alt="">
+            <img src="./ImmaginiCarte/dorso.JPG" alt="">
         </div>
 
         <div class="start">
             <div class="deck">
-                <img src="./Immagini Carte/dorso.JPG" alt="" id="pesca-carta">
+                <img src="./ImmaginiCarte/dorso.JPG" alt="" id="pesca-carta">
                 <img class="card" src="" alt="<-- clicca qui">
             </div>
 
             <div class="cards">
-                <img src="./Immagini Carte/bg_c13.gif" alt="" data-suit="c">
-                <img src="./Immagini Carte/bg_d13.gif" alt="" data-suit="d">
-                <img src="./Immagini Carte/bg_h13.gif" alt="" data-suit="h">
-                <img src="./Immagini Carte/bg_s13.gif" alt="" data-suit="s">
+                <img src="./ImmaginiCarte/bg_c13.gif" alt="" data-suit="c">
+                <img src="./ImmaginiCarte/bg_d13.gif" alt="" data-suit="d">
+                <img src="./ImmaginiCarte/bg_h13.gif" alt="" data-suit="h">
+                <img src="./ImmaginiCarte/bg_s13.gif" alt="" data-suit="s">
             </div>
         </div>
     </main>
-    <?php
-        //qua ricevi il seme punta
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-            $seme = $_POST['seme']; // $seme = 'h', 'd', 'c', 's'
-
-        }
-
-    ?>
+    
     <script>
         const START_POINTS = {
             c: 0,
@@ -103,7 +94,7 @@ $betSuit = "c";
             function restartGame() {
                 $(`[data-suit]`).css('top', '0')
                 $(".deck .card").attr('src', '')
-                $('.field img').attr('src', './Immagini Carte/dorso.JPG')
+                $('.field img').attr('src', './ImmaginiCarte/dorso.JPG')
                 points = {
                     ...START_POINTS
                 }
@@ -120,7 +111,7 @@ $betSuit = "c";
             function checkGame(suit) {
                 if (points[suit] === 6) {
                     setTimeout(() => {
-                        const bet = '<?= $betSuit ?>'
+                        const bet = '<?= $betSuit ?>'.trim()
                         const SUITS = {
                             c: 'fiori',
                             h: 'cuori',
@@ -154,7 +145,7 @@ $betSuit = "c";
 
                     success: function(res) {
                         const cards = $('.field img')
-                        cards.get(cards.length - points[suit] + 1).src = './Immagini Carte/' + res
+                        cards.get(cards.length - points[suit] + 1).src = './ImmaginiCarte/' + res
 
                         setTimeout(() => {
                             suit = res[3];
@@ -176,7 +167,7 @@ $betSuit = "c";
                     cache: false,
 
                     success: function(response) {
-                        $(".deck .card").attr('src', './Immagini Carte/' + response)
+                        $(".deck .card").attr('src', './ImmaginiCarte/' + response)
                         const suit = response[3]
                         points[suit] += 1
 

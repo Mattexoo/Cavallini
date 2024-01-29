@@ -11,7 +11,6 @@ $betSuit = $_POST['seme'];
     <title>Inizia la corsa</title>
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
     <style>
         * {
             margin: 0;
@@ -23,37 +22,105 @@ $betSuit = $_POST['seme'];
         body {
             height: 100%;
             width: 100%;
+            margin: 0px;
+            background-image: url(./IMG/bg.png);
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
         }
 
         .gioco {
-            margin-top: 150px;
+            margin-top: 0px;
         }
 
+        .field{
+            display: flex;
+            flex-direction: column;
+            width: 5%;
+            height: 450px;
+            padding: 10px;
+            margin-left:20%;
+        }
         .field img {
             display: block;
+            height: 125px;
+            width: 100px;
+            margin: 5px;
+            border: solid 1px black;
+            border-radius: 7px;
         }
 
         .start {
+            display : flex;
+            align-items : center;
+            justify-content : center;
+            flex-direction: row;
+            width : 90vh;
+            margin-left: 25%;
+            margin-top : 220px;
+            padding: 25px;
+        }
+
+        .start .cards {
             display: flex;
+            max-width: 700px;
         }
 
         .start .deck {
-            width: 300px;
+            width: 400px;
             padding: 0 50px;
+            display : flex;
+            align-items : center;
+            justify-content : center;
+            flex-direction: row;
+            
         }
 
         .start .cards img {
             position: relative;
             margin: 0 12px;
+            border: solid 1px black;
+            border-radius: 7px;
+            padding : 5px;
+            background-color: white;
         }
 
         #pesca-carta {
             cursor: pointer;
+
+            /**QUESTI COMANDI TOLGONO LA POSSIBILITA' DI EVIDENZIARE IL TESTO */
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non prefisso */
+
+            border: solid 2px black;
+            padding: 15px;
+            border-radius: 20px;
+            display : flex;
+            align-items : center;
+            justify-content : center;
+            flex-direction: column;
+            background-color: #bee9e8;
+        }
+
+        #pesca-carta:hover{
+            background-color: #5e9695;
+        }
+
+        .card{
+            border: solid 1px black;
+            border-radius: 7px;
         }
     </style>
 </head>
 
 <body>
+        <header>
+            <img src="./IMG/bandiera.jpg" width="100%" height="75px">
+        </header>
     <main class="gioco">
         <div class="field">
             <img src="./ImmaginiCarte/dorso.JPG" alt="">
@@ -65,8 +132,18 @@ $betSuit = $_POST['seme'];
 
         <div class="start">
             <div class="deck">
-                <img src="./ImmaginiCarte/dorso.JPG" alt="" id="pesca-carta">
-                <img class="card" src="" alt="<-- clicca qui">
+                <div id="pesca-carta">
+                    <div>
+                    GIRA
+                    </div> 
+                    <div>
+                    UNA
+                    </div>
+                    <div>
+                    CARTA
+                    </div>
+                </div>
+                <img class="card" src="">
             </div>
 
             <div class="cards">
@@ -92,6 +169,7 @@ $betSuit = $_POST['seme'];
             }
 
             function restartGame() {
+                location.reload();
                 $(`[data-suit]`).css('top', '0')
                 $(".deck .card").attr('src', '')
                 $('.field img').attr('src', './ImmaginiCarte/dorso.JPG')
@@ -124,7 +202,7 @@ $betSuit = $_POST['seme'];
                         else message = 'Hai perso, ha vinto il seme: ' + SUITS[suit]
                         message += "\nVuoi cambiare il seme scommesso?"
 
-                        if (confirm(message)) window.location.replace("/")
+                        if (confirm(message)) window.location.replace("./")
                         else restartGame()
 
                     }, 200)
